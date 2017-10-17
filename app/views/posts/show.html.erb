@@ -1,2 +1,12 @@
-<%= image_tag( @post.image.url(:medium) ) %>
-<%= @post.caption %>
+<h1>Photogram</h1>
+
+<div class="col-md-8">
+  <div>
+    <%= link_to "New post", new_post_path %>
+  </div>
+  <div>
+    <%= image_tag( @post.image.url(:medium) ) %>
+  <div>
+    <%= @post.caption %>
+  </div>
+</div>
