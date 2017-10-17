@@ -46,7 +46,7 @@ class PostsController < ApplicationController
 
     if @post.destroy
       flash[:success] = 'Problem solved! Post deleted.'
-      redirect_to posts_path
+      redirect_to root_path
     else
       flash[:alert] = 'Something went wrong. Try again.'
       render :edit

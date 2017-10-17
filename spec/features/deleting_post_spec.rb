@@ -10,8 +10,11 @@ feature 'Deleting posts' do
   end
 
   scenario 'Can delete a single post' do
-    click_button 'Delete Post'
+    page.accept_confirm do
+      click_button 'Delete Post'
+    end
 
+    expect(page.current_path).to eq(root_path)
     expect(page).to have_content('Problem solved! Post deleted.')
     expect(page).to_not have_content('Whoops!')
   end
