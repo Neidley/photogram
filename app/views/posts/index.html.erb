@@ -1,14 +1,16 @@
-<h1>Photogram</h1>
-
 <%= link_to "New post", new_post_path %>
 
-<div class="col-md-8">
+<div class="posts-wrapper row">
   <% @posts.each do |post| %>
-    <div>
-      <%= link_to image_tag( post.image.url(:medium) ), post_path(post[:id]) %>
-    </div>
-    <div>
-      <%= post.caption %>
-    </div>
+    <div class="post">
+      <div class="post-head">
+        <div class="name">Peter Parker</div>
+      </div>
+      <div class="image center-block">
+        <%= link_to image_tag( post.image.url(:medium) ), post_path(post[:id]) %>
+      </div>
+      <p class="caption">
+        <%= post.caption %>
+      </p>
   <% end %>
 </div>

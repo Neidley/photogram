@@ -1,15 +1,17 @@
-<h1>Photogram</h1>
+<div class="posts-wrapper row">
+  <div class="post">
+    <div class="post-head">
+      <div class="name">Peter Parker</div>
+    </div>
+    <div class="image center-block">
+      <%= image_tag( @post.image.url(:medium) ) %>
+    </div>
+    <p class="caption">
+      <%= @post.caption %>
+    </p>
 
-<div class="col-md-8">
-  <div>
-    <%= link_to "New post", new_post_path %>
-  </div>
-  <div>
-    <%= image_tag( @post.image.url(:medium) ) %>
-  <div>
-    <%= @post.caption %>
-  </div>
-  <div>
-    <%= link_to "Edit post", edit_post_path(@post[:id]) %>
+  <div class="text-center edit-links">
+    <button><%= link_to "Cancel", posts_path %></button>
+    <button><%= link_to "Edit post", edit_post_path(@post[:id]) %></button>
   </div>
 </div>
