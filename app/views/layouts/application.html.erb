@@ -4,11 +4,22 @@
     <title>Photogram</title>
     <%= csrf_meta_tags %>
 
+    <meta name="viewport" content="width=device-width", initial-scale=1">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container">
+      <ul class="nav nav-tabs">
+        <li><%= link_to "Home", root_path %></li>
+      </ul>
+
+      <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, class: [:alert, alert_for(name)] %>
+      <% end %>
+
+      <%= yield %>
+    </div>
   </body>
 </html>

@@ -1,0 +1,14 @@
+<h1>New Post</h1>
+<div class="col-md-8">
+  <%= simple_form_for @post do |f| %>
+    <div class="form-group">
+      <%= f.input :image, as: :file %>
+    </div>
+    <div class="form-group">
+      <%= f.input :caption %>
+    </div>
+    <div class="form-group">
+      <%= f.button :submit %>
+    </div>
+  <% end %>
+</div>
