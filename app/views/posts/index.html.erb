@@ -5,7 +5,7 @@
 <div class="col-md-8">
   <% @posts.each do |post| %>
     <div>
-      <%= image_tag( post.image.url(:medium) ) %>
+      <%= link_to image_tag( post.image.url(:medium) ), post_path(post[:id]) %>
     </div>
     <div>
       <%= post.caption %>

@@ -14,12 +14,42 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+
     if @post.save
-      flash[:success] = "Your post has been created."
+      flash[:success] = 'Your post has been created.'
       redirect_to @post
     else
       flash[:alert] = 'Halt, you fiend! You need an image to post here!'
       render :new
+    end
+  end
+
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    @post.update(post_params)
+
+    if @post.save
+      flash[:success] = 'Post updated hombre'
+      redirect_to @post
+    else
+      flash[:alert] = 'Something went wrong. Try again.'
+      render :edit
+    end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+
+    if @post.destroy
+      flash[:success] = 'Problem solved! Post deleted.'
+      redirect_to posts_path
+    else
+      flash[:alert] = 'Something went wrong. Try again.'
+      render :edit
     end
   end
 

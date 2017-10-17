@@ -9,4 +9,7 @@
   <div>
     <%= @post.caption %>
   </div>
+  <div>
+    <%= link_to "Edit post", edit_post_path(@post[:id]) %>
+  </div>
 </div>
