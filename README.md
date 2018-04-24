@@ -1,24 +1,12 @@
-# README
+# Photogram:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# an introduction to Paperclip image uploading on Rails.
 
-Things you may want to cover:
+### General Overview
 
-* Ruby version
+  An instagram clone that allows users to upload images to a user profile.
 
-* System dependencies
 
-* Configuration
+### Tech used:
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+  Ruby on Rails / Paperclip
